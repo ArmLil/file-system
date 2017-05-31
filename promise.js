@@ -41,4 +41,4 @@ const append = (file, text) => {
 read('fromFile1').then(d1 => {
 	return read('fromFile2').then(d2 =>
 		append('toFile', d1 + d2))
-});
+}).catch(err => console.error('Opps', err));

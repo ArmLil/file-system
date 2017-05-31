@@ -18,9 +18,13 @@ const append = async(file, data) => {
 };
 
 const main = async() => {
-	const d1 = await read('fromFile1');
-	const d2 = await read('fromFile2');
-	const a = await append('toFile', d1 + d2);
+	try {
+		const d1 = await read('fromFile1');
+		const d2 = await read('fromFile2');
+		const a = await append('toFile', d1 + d2);
+	} catch (e) {
+		console.error(e);
+	}
 }
 
 main();
