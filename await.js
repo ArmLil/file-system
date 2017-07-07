@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const read = async(file) => {
+const read = file => {
 	return new Promise((res, rej) => {
 		fs.readFile(file, 'utf8', (err, data) => {
 			if (err) return rej(err);
@@ -11,7 +11,7 @@ const read = async(file) => {
 	});
 };
 
-const append = async(file, data) => {
+const append = (file, data) => {
 	fs.appendFile(file, data, 'utf8', err => {
 		if (err) throw err;
 	});
